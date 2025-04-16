@@ -1,0 +1,11 @@
+ * {
+    color: black;
+ } ul {
+    display: none;
+  }
+  li:hover {
+    background-color: rgb(8, 136, 255);
+  }
+
+  .show {display: block;
+        color: white;}
