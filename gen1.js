@@ -77,7 +77,7 @@ function addToTeam(r, p){
 
     if (team.some(el => el.route === r)) {
         let temp = team.findIndex((el) => el.route === r)
-        team[temp] = {route: r, pokemon: p}
+        team[temp] = {route: r, pokemon: p, status: "Alive"}
     } else {
         team.push({route: r, pokemon: p});
     }
