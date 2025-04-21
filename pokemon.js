@@ -65,5 +65,22 @@ export const pokemon = [
     { no: 47, name: "Parasect",  type: ["Bug", "Grass"], abilities: ["Effect_Spore", "Dry_Skin", "Damp"], locations: ["Gen1_Safari_Zone", "Gen1_Cerulean_Cave", "Gen1_Route_18"], evolutions: ["Paras"], img: "./sprites/047MSPE.png"},
     { no: 48, name: "Venonat",  type: ["Bug", "Poison"], abilities: ["Compount_Eyes", "Tinted_Lens", "Run_Away"], locations: ["Gen1_Route_12", "Gen1_Route_13", "Gen1_Route_14", "Gen1_Route_15", "Gen1_Route_25", "Gen1_Safari_Zone"], evolutions: ["Venomoth"], img: "./sprites/048MSPE.png"},
     { no: 49, name: "Venomoth",  type: ["Bug", "Poison"], abilities: ["Shield_Dust", "Tinted_Lens", "Wonder_Skin"], locations: ["Gen1_Route_14", "Gen1_Route_15", "Gen1_Victory_Road", "Gen1_Cerulean_Cave"], evolutions: ["Venonat"], img: "./sprites/049MSPE.png"},
-
+    { no: 50, name: "Diglett",  type: ["Ground"], abilities: ["Sand_Veil", "Arena_Trap", "Sand_Force"], locations: ["Gen1_Digletts_Cave" , "LG_Digletts_Cave"], evolutions: ["Dugtrio"], img: "./sprites/050MSPE.png"},
+    { no: 50, name: "Alolan-Diglett",  type: ["Ground", "Steel"], abilities: ["Sand_Veil", "Tangling_Hair", "Sand_Force"], locations: ["SM_Route_5", "SM_Route_7", "SM_Digletts_Tunnel", "SM_Lush_Jungle", "SM_Seaward_Cave", "SM_Ten_Carat_Hill", "SM_Verdant_Cavern", "USUM_Route_5", "USUM_Route_7", "USUM_Digletts_Tunnel", "USUM_Verdant_Cavern"], evolutions: ["Alolan_Dugtrio"], img: "./sprites/050AMSPE.png"},
+    { no: 51, name: "Dugtrio",  type: ["Ground"], abilities: ["Sand_Veil", "Arena_Trap", "Sand_Force"], locations: ["Gen1_Digletts_Cave", "Gen1_Route_11"], evolutions: ["Diglett"], img: "./sprites/051MSPE.png"},
+    { no: 51, name: "Alolan-Dugtrio",  type: ["Ground", "Steel"], abilities: ["Sand_Veil", "Tangling_Hair", "Sand_Force"], locations: ["SM_Haina_Desert", "SM_Poni_Coast", "SM_Resolution_Cave", "SM_Vast_Poni_Canyon", "USUM_Haina_Desert", "USUM_Poni_Coast", "USUM_Resolution_Cave", "USUM_Vast_Poni_Canyon", "USUM_Lush_Jungle"], evolutions: ["Alolan_Diglett"], img: "./sprites/051AMSPE.png"},
+    { no: 52, name: "Meowth",  type: ["Normal"], abilities: ["Pickup", "Technician", "Unnerve"], locations: ["Gen1_Route_5", "Gen1_Route_6", "Gen1_Route_7", "Gen1_Route_8"], evolutions: ["Persian"], img: "./sprites/052MSPE.png"},
+    { no: 52, name: "Alolan_Meowth",  type: ["Dark"], abilities: ["Pickup", "Technician", "Rattled"], locations: ["SM_Route_2", "SM_Trainers_School", "SM_Hauoli_City", "SM_Malie_Garden", "USUM_Route_2", "USUM_Trainers_School", "USUM_Hauoli_City", "USUM_Malie_Garden"], evolutions: ["Alolan_Persian"], img: "./sprites/052AMSPE.png"},
+    { no: 52, name: "Galarian_Meowth",  type: ["Steel"], abilities: ["Pickup", "Tough_Claws", "Unnerve"], locations: ["Gen8_Route_4"], evolutions: ["Perrserker"], img: "./sprites/052GMS8.png"},
+    { no: 53, name: "Persian",  type: ["Normal"], abilities: ["Limber", "Technician", "Unnerve"], locations: [], evolutions: ["Meowth"], img: "./sprites/053MSPE.png"},
+    { no: 53, name: "Alolan_Persian",  type: ["Dark"], abilities: ["Fur_Coat", "Technician", "Rattled"], locations: ["USUM_Malie_Garden"], evolutions: ["Alolan_Meowth"], img: "./sprites/053AMSPE.png"},
+    { no: 54, name: "Psyduck",  type: ["Water"], abilities: ["Damp", "Cloud_Nine", "Swift_Swim"], locations: ["Gen1_Seafoam_Islands", "Gen1_Route_6", "Gen1_Route_24", "Gen1_Route_25", "Gen1_Cerulean_City", "Gen1_Safari_Zone"
+    ], evolutions: ["Golduck"], img: "./sprites/054MSPE.png"},
+    { no: 55, name: "Golduck",  type: ["Water"], abilities: ["Damp", "Cloud_Nine", "Swift_Swim"], locations: ["Gen1_Seafoam_Islands", "Gen1_Route_6"], evolutions: ["Psyduck"], img: "./sprites/055MSPE.png"},
+    { no: 56, name: "Mankey",  type: ["Fighting"], abilities: ["Vital_Spirit", "Anger_Point", "Defiant"
+    ], locations: ["Gen1_Route_3", "Gen1_Route_4", "Gen1_Route_5", "Gen1_Route_6", "Gen1_Route_7", "Gen1_Route_8", "Gen1_Route_22", "Gen1_Route_23"], evolutions: ["Primeape"], img: "./sprites/056MSPE.png"},
+    { no: 57, name: "Primneape",  type: ["Fighting"], abilities: ["Vital_Spirit", "Anger_Point", "Defiant"
+    ], locations: ["Gen1_Route_23"], evolutions: ["Mankey", "Annihilape"], img: "./sprites/057MSPE.png"},
+    { no: 58, name: "Growlithe",  type: ["Fire"], abilities: ["Intimidate", "Flash_Fire", "Justified"
+    ], locations: ["Gen1_Route_7", "Gen1_Route_8", "Gen1_Pokemon_Mansion"], evolutions: ["Arcanine"], img: "./sprites/058MSPE.png"},
 ]; 
