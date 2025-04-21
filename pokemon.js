@@ -52,4 +52,18 @@ export const pokemon = [
     { no: 38, name: "Alolan_Ninetales",  type: ["Ice", "Fairy"], abilities: ["Snow_Cloak", "Snow_Warning"], locations: [], evolutions: ["Alolan_Vulpix"], img: "./sprites/038AMSPE.png"},
     { no: 39, name: "Jigglypuff",  type: ["Normal", "Fairy"], abilities: ["Cute_Charm", "Competitive", "Friend_Guard"], locations: ["Gen1_Route_3", "Gen1_Route_5", "Gen1_Route_6", "Gen1_Route_7", "Gen1_Route_8"], evolutions: ["Igglybuff", "Wigglytuff"], img: "./sprites/039MSPE.png"},
     { no: 40, name: "Wigglytuff",  type: ["Normal", "Fairy"], abilities: ["Cute_Charm", "Competitive", "Frisk"], locations: ["Gen1_Cerulean_Cave", "Gen1_Celadon_City"], evolutions: ["Igglybuff", "Jigglypuff"], img: "./sprites/040MSPE.png"},
+    { no: 41, name: "Zubat",  type: ["Poison", "Flying"], abilities: ["Inner_Focus", "Infiltrator"], locations: ["Gen1_Mt_Moon", "Gen1_Rock_Tunnel", "Gen1_Seafoam_Islands", "Gen1_Victory_Road"
+    ], evolutions: ["Golbat", "Crobat"], img: "./sprites/041MSPE.png"},
+    { no: 42, name: "Golbat",  type: ["Poison", "Flying"], abilities: ["Inner_Focus", "Infiltrator"], locations: [ "Gen1_Seafoam_Islands", "Gen1_Victory_Road", "Gen1_Cerulean_Cave"
+    ], evolutions: ["Zubat", "Crobat"], img: "./sprites/042MSPE.png"},
+    { no: 43, name: "Oddish",  type: ["Grass", "Poison"], abilities: ["Chlorophyll", "Run_Away"], locations: [ "Gen1_Route_5", "Gen1_Route_6", "Gen1_Route_7", "Gen1_Route_12", "Gen1_Route_13", "Gen1_Route_14", "Gen1_Route_15", "Gen1_Route_24", "Gen1_Route_25",    
+    ], evolutions: ["Gloom", "Vileplume", "Bellossom"], img: "./sprites/043MSPE.png"},
+    { no: 44, name: "Gloom",  type: ["Grass", "Poison"], abilities: ["Chlorophyll", "Stench"], locations: [ "Gen1_Route_12", "Gen1_Route_13", "Gen1_Route_14", "Gen1_Route_15", "Gen1_Cerulean_Cave"  
+    ], evolutions: ["Oddish", "Vileplume", "Bellossom"], img: "./sprites/044MSPE.png"},
+    { no: 45, name: "Vileplume",  type: ["Grass", "Poison"], abilities: ["Chlorophyll", "Effect_Spore"], locations: [], evolutions: ["Oddish", "Gloom", "Bellossom"], img: "./sprites/045MSPE.png"},
+    { no: 46, name: "Paras",  type: ["Bug", "Grass"], abilities: ["Effect_Spore", "Dry_Skin", "Damp"], locations: ["Gen1_Mt_Moon", "Gen1_Safari_Zone"], evolutions: ["Parasect"], img: "./sprites/046MSPE.png"},
+    { no: 47, name: "Parasect",  type: ["Bug", "Grass"], abilities: ["Effect_Spore", "Dry_Skin", "Damp"], locations: ["Gen1_Safari_Zone", "Gen1_Cerulean_Cave", "Gen1_Route_18"], evolutions: ["Paras"], img: "./sprites/047MSPE.png"},
+    { no: 48, name: "Venonat",  type: ["Bug", "Poison"], abilities: ["Compount_Eyes", "Tinted_Lens", "Run_Away"], locations: ["Gen1_Route_12", "Gen1_Route_13", "Gen1_Route_14", "Gen1_Route_15", "Gen1_Route_25", "Gen1_Safari_Zone"], evolutions: ["Venomoth"], img: "./sprites/048MSPE.png"},
+    { no: 49, name: "Venomoth",  type: ["Bug", "Poison"], abilities: ["Shield_Dust", "Tinted_Lens", "Wonder_Skin"], locations: ["Gen1_Route_14", "Gen1_Route_15", "Gen1_Victory_Road", "Gen1_Cerulean_Cave"], evolutions: ["Venonat"], img: "./sprites/049MSPE.png"},
+
 ]; 

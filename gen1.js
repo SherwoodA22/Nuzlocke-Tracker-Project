@@ -23,7 +23,6 @@ routes.forEach((el) => {
     input.type = "text";
     input.id = `${el}_input`;
     input.addEventListener("click", () => search(`${el}_options`))
-    input.addEventListener("focusout", () => search(`${el}_options`))
     encounter.appendChild(input);
     let ul = document.createElement("ul");
     ul.id = `${el}_options`;
