@@ -1,13 +1,108 @@
- * {
-    color: black;
- } ul {
+body {
+  margin: 0;
+  background-color: rgb(200,0,0);
+}
+ul {
     display: none;
+    position: absolute;
+    z-index: 1;
+    border: 5px;
+    border-radius: 30px;
+    background-color: white;
+    margin-top: 10px;
+    
+    border: solid 5px;
+    border-color:black;
+  }
+
+  
+  .party {
+    height: 40px;
+    width: 40px;
+  }
+
+  .topnavbar {
+    background-color: rgb(200,0,0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  .topnavbar a, .topnavbar img {
+    float: left;
+    text-align:center;
+    padding: 15px;
+
+  }
+
+  .topnavbar a:hover, .topnavbar img:hover {
+    background-color: white;
+  }
+
+
+  .wrapper {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    
+  }
+  p {
+    width: 10%;
+    color:white;
+    font-size:20px;
+    margin-right: 20px;
   }
   li:hover {
     background-color: rgb(8, 136, 255);
+    
   }
 
   .show {display: block;
         color: white;}
 
+   [contenteditable], input {
+    height: 60px;
+    width: 300px;
+    padding-left:10px;
+    font-size: 20px;
+    position: relative;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    position: relative;
   
+  }
+
+  [contenteditable] {
+    height: 50px;
+    font-size: 20px;
+    position: relative;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    position: relative;
+    display: flex;
+    align-items:center;
+  }
+
+
+  li {
+    color: black;
+    list-style:none;
+    position: relative;
+    width:250px;
+    padding-left:10px;
+    padding-top:20px;
+    padding-right: 0px;
+    font-size: 20px;
+    height: 60px;
+    left: -40px;
+    
+  }
+  
+
+  div > div > div{
+    display:inline-block;
+    padding-bottom: 10px;
+  }  

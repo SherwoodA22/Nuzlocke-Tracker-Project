@@ -9,24 +9,63 @@ const routes = ["Gen1_Starter", "Gen1_Route_1", "Gen1_Viridian_City", "Gen1_Rout
 const box = [];
 const team = [];
 
+
 const encounter = document.getElementById("encounter_details");
-let ul = document.createElement("ul");
-ul.id = "routes_list"
-encounter.appendChild(ul);
 routes.forEach((el) => {
+    let div1 = document.createElement("div");
+    div1.id = `${el}_div`;
+    div1.classList = "wrapper";
+    encounter.appendChild(div1);
     let p = document.createElement("p");
     p.innerText = `${el.replace('_', " ")}`
     p.innerText = p.innerText.replace("Gen1", "");
     p.innerText = p.innerText.replace("_", " ");
-    encounter.appendChild(p);
-    let input = document.createElement("input");
-    input.type = "text";
+    div1.appendChild(p);
+    let div = document.createElement("div");
+    div.id=`${el}_pokemonn_div`;
+    div1.appendChild(div);
+    let input = document.createElement("div");
+    input.contentEditable = "false";
+    input.innerText = "Select Pokemon...";
     input.id = `${el}_input`;
     input.addEventListener("click", () => search(`${el}_options`))
-    encounter.appendChild(input);
+    div.appendChild(input);
+    let div2 = document.createElement("div");
+    div2.id = `${el}_status_div`
+    div1.appendChild(div2);
+    let faint = document.createElement("div");
+    faint.contentEditable = "false";
+    faint.innerText = `Status...`
+    let status = document.createElement("ul");
+    status.id = `${el}_status`;
+    faint.id = `${el}_select`;
+    let o1 = document.createElement("li");
+    o1.value = "status";
+    o1.innerText = "Status..."
+    let o2 = document.createElement("li");
+    o2.value = "captured";
+    o2.innerText = "Captured"
+    let o3 = document.createElement("li");
+    o3.value = "recieved";
+    o3.innerText = "Recieved"
+    let o4 = document.createElement("li");
+    o4.value = "fainted";
+    o4.innerText = "Fainted"
+    o1.addEventListener("click", () => addStatus(o1.innerText, `${el}_select`, `${el}_status`, `${el}_input`));
+    o2.addEventListener("click", () => addStatus(o2.innerText, `${el}_select`, `${el}_status`, `${el}_input`));
+    o3.addEventListener("click", () => addStatus(o3.innerText, `${el}_select`, `${el}_status`, `${el}_input`));
+    o4.addEventListener("click", () => addStatus(o4.innerText, `${el}_select`, `${el}_status`, `${el}_input`));
+    status.appendChild(o1);
+    status.appendChild(o2);
+    status.appendChild(o3);
+    status.appendChild(o4);
+    faint.addEventListener("click", () => search(`${el}_status`))
+    div2.appendChild(faint);
+    div2.appendChild(status);
+
     let ul = document.createElement("ul");
     ul.id = `${el}_options`;
-    encounter.appendChild(ul);
+    div.appendChild(ul);
 
     pokemon.forEach((pel) => {
         if (pel.locations.includes(el)) {
@@ -36,24 +75,41 @@ routes.forEach((el) => {
             let img = document.createElement(`img`);
             img.src = `${pel.img}`;
             li.appendChild(img);
-            li.addEventListener("click", () => addToTeam(el, pel));
+            li.addEventListener("click", () => addToTeam(el, pel, `${el}_options`, `${el}_input`));
             document.getElementById(`${el}_options`).appendChild(li);
     
     }
 })
 })
 
+function addStatus(id, text, hide, poke) {
+    document.getElementById(text).innerText = `${id}`
+    let temp =  document.getElementById(poke).textContent; 
+    if (temp !== "Select Pokemon...") {
+        let find = box.findIndex((el) => el.pokemon.name === temp);
+        box[find].status = id;
+    }
+    search(hide);
+    console.log(box)
+}
+
 
 function search(id) {
     document.getElementById(id).classList.toggle("show");
 }
 
-function addToTeam(r, p){
+function addToTeam(r, p, id, selectid){
 
     if (box.some(el => el.route === r)) {
         let temp = box.findIndex((el) => el.route === r)
-        box[temp] = {route: r, pokemon: p, status: "Alive"}
+        box[temp] = {route: r, pokemon: p, status: ""}
     } else {
-        box.push({route: r, pokemon: p, status: "Alive"});
+        box.push({route: r, pokemon: p, status: ""});
     }
+
+    document.getElementById(selectid).innerText = p.name;
+    let image = document.createElement("img");
+    image.src = `${p.img}`;
+    document.getElementById(selectid).appendChild(image);
+    search(id);
 }
