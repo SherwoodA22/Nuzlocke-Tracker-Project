@@ -8,6 +8,7 @@ const routes = ["Gen1_Starter", "Gen1_Route_1", "Gen1_Viridian_City", "Gen1_Rout
 
 const box = [];
 const team = [];
+const fainted = [];
 
 
 const encounter = document.getElementById("encounter_details");
@@ -22,13 +23,15 @@ routes.forEach((el) => {
     p.innerText = p.innerText.replace("_", " ");
     div1.appendChild(p);
     let div = document.createElement("div");
-    div.id=`${el}_pokemonn_div`;
+    div.id=`${el}_pokemon_div`;
     div1.appendChild(div);
+
     let input = document.createElement("div");
     input.contentEditable = "false";
-    input.innerText = "Select Pokemon...";
+    input.innerText = "Select Pokémon...";
     input.id = `${el}_input`;
-    input.addEventListener("click", () => search(`${el}_options`))
+    input.addEventListener("click", (event) => search(`${el}_options`));
+    input.addEventListener("focusout", () => search(`${el}_options`));
     div.appendChild(input);
     let div2 = document.createElement("div");
     div2.id = `${el}_status_div`
@@ -63,6 +66,26 @@ routes.forEach((el) => {
     div2.appendChild(faint);
     div2.appendChild(status);
 
+    let evolve = document.createElement("div");
+    evolve.id = `${el}_evolve`;
+    evolve.classList = "reset";
+    let evolveImg = document.createElement("img");
+    evolveImg.src = "./sprites/evolve.png";
+    evolveImg.id = `${el}_evolve_img`;
+    evolve.appendChild(evolveImg);
+    evolve.addEventListener("click", () => evolve(`${el}_input`));
+    div1.appendChild(evolve);
+
+    let reset = document.createElement("div");
+    reset.id = `${el}_reset`;
+    reset.classList = "reset";
+    let resetImg = document.createElement("img");
+    resetImg.src = "./sprites/faint.png";
+    resetImg.id = `${el}_reset_img`;
+    reset.appendChild(resetImg);
+    reset.addEventListener("click", () => pokemonReset(el, `${el}_input`, `${el}_select`));
+    div1.appendChild(reset);
+    
     let ul = document.createElement("ul");
     ul.id = `${el}_options`;
     div.appendChild(ul);
@@ -71,10 +94,13 @@ routes.forEach((el) => {
         if (pel.locations.includes(el)) {
             let li = document.createElement(`li`);
             li.id = `${el}_${pel.name}`;
-            li.textContent = `${pel.name}`
             let img = document.createElement(`img`);
             img.src = `${pel.img}`;
             li.appendChild(img);
+            let span = document.createElement("span");
+            span.id = `${pel.name}_span`;
+            span.innerText = `${pel.name}`
+            li.appendChild(span)
             li.addEventListener("click", () => addToTeam(el, pel, `${el}_options`, `${el}_input`));
             document.getElementById(`${el}_options`).appendChild(li);
     
@@ -82,10 +108,11 @@ routes.forEach((el) => {
 })
 })
 
+
 function addStatus(id, text, hide, poke) {
     document.getElementById(text).innerText = `${id}`
     let temp =  document.getElementById(poke).textContent; 
-    if (temp !== "Select Pokemon...") {
+    if (temp !== "Select Pokémon...") {
         let find = box.findIndex((el) => el.pokemon.name === temp);
         box[find].status = id;
     }
@@ -107,9 +134,42 @@ function addToTeam(r, p, id, selectid){
         box.push({route: r, pokemon: p, status: ""});
     }
 
-    document.getElementById(selectid).innerText = p.name;
+    let pid = document.getElementById(selectid)
+    let span = document.createElement("span");
+    span.id = `${p.name}_span`;
+    span.innerText = `${p.name}`
     let image = document.createElement("img");
     image.src = `${p.img}`;
-    document.getElementById(selectid).appendChild(image);
+    image.classList = "pokemonDisplay";
+    pid.innerText = "";
+    pid.appendChild(image);
+    pid.appendChild(span)
     search(id);
+}
+
+
+function evolve(input) {
+
+}
+
+function pokemonReset(r, input1, input2) {
+    let status = document.getElementById(input2)
+    const p = document.getElementById(input1);
+    console.log(status, p)
+
+
+    if (box.some(el => el.route === r)) {
+        let temp = box.findIndex((el) => el.route === r)
+        box[temp].status = "Fainted";
+        fainted.push(box[temp]);
+        console.log("Fainted: ", fainted);
+        box.splice(temp, 1);
+        console.log("Box: ", box);
+        status.innerText = "Status..."
+        p.innerHTML = "";
+        let span = document.createElement("span");
+        span.innerText = `Select Pokémon...`;
+        p.appendChild(span);
+    }
+    
 }

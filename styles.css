@@ -1,37 +1,40 @@
 body {
   margin: 0;
-  background-color: rgb(200,0,0);
+  background-color: rgb(30,30,30);
 }
 ul {
     display: none;
     position: absolute;
     z-index: 1;
     border: 5px;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: white;
     margin-top: 10px;
-    
     border: solid 5px;
-    border-color:black;
+    border-color:rgb(100,100,100);
+    overflow: auto;
+    max-height: 300px;
+    width:260px;
+    overflow-x: hidden;
   }
 
-  
+
   .party {
-    height: 40px;
-    width: 40px;
+    height: 80px;
+    width: 80px;
   }
 
   .topnavbar {
-    background-color: rgb(200,0,0);
+    background: linear-gradient(180deg, red, rgb(200,0,0), rgb(100,0,0));
     overflow: hidden;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
   }
 
   .topnavbar a, .topnavbar img {
-    float: left;
+    float: center;
     text-align:center;
-    padding: 15px;
 
   }
 
@@ -45,40 +48,41 @@ ul {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    
+    margin-left: 80px;
   }
+
   p {
     width: 10%;
     color:white;
-    font-size:20px;
-    margin-right: 20px;
+    font-size:25px;
+    margin-right: 10px;
   }
   li:hover {
     background-color: rgb(8, 136, 255);
-    
+
   }
 
   .show {display: block;
         color: white;}
 
-   [contenteditable], input {
+   [contenteditable] {
     height: 60px;
-    width: 300px;
+    width: 290px;
     padding-left:10px;
     font-size: 20px;
     position: relative;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: white;
     color: black;
     position: relative;
-  
-  }
-
+    border-style: solid;
+    border-color:rgb(100,100,100);
+   }
   [contenteditable] {
     height: 50px;
-    font-size: 20px;
+    font-size: 30px;
     position: relative;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: white;
     color: black;
     position: relative;
@@ -91,18 +95,50 @@ ul {
     color: black;
     list-style:none;
     position: relative;
-    width:250px;
+    width:300px;
     padding-left:10px;
-    padding-top:20px;
-    padding-right: 0px;
-    font-size: 20px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    font-size: 30px;
     height: 60px;
     left: -40px;
-    
+    font-size: 30px;
+    display:flex;
+    vertical-align: middle
   }
   
 
   div > div > div{
     display:inline-block;
     padding-bottom: 10px;
+    padding-right: 5px;
   }  
+
+.reset, .evolve {
+  background-color: white;
+  width: 60px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border-color:rgb(100,100,100);
+  border-style: solid;
+}
+
+[contenteditable]:hover, .reset:hover, .evolve:hover {
+  border-color:rgb(200,0,0);
+  border-style: solid;
+}
+
+.pokemonDisplay {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+div > img {
+   width: 40px;
+   height: 40px;
+   margin-left: 10px;
+   margin-top: 10px;
+}

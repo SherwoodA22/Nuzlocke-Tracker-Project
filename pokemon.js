@@ -1,4 +1,5 @@
 //On Pidgey For adding the routes from other games. Will Update on each game done.
+//Stopped on Poliwag for abilities.
 export const pokemon = [
     { no: 1, name: "Bulbasaur",   type: ["Grass", "Poison"], abilities: ["Overgrow", "Chlorophyll"], locations: ["Gen1_Starter", "FRLG_Starter", "HGSS_Pallet_Town", "Gen6_Lumiose_City", "USUM_Route_2", "LG_Viridian_Forest", "LG_Cerulean_City", "Gen8_Master_Dojo", "BDSP_Grassland_Cave", "BDSP_Sunlit_Cavern", "BDSP_Swampy_Cave", "BDSP_Riverbank_Cave", "BDSP_Still_Water_Cavern", "BDSP_Bogsunk_Cavern", "Gen9_Coastal_Biome", "Gen9_Torchlit_Labyrinth"], evolutions: ["Ivysaur", "Venusaur"], img: "./sprites/001MSPE.png"},
     { no: 2, name: "Ivysaur",  type: ["Grass", "Poison"], abilities: ["Overgrow", "Chlorophyll"], locations: ["Gen8_Max_Lair"], evolutions: ["Bulbasaur", "Venusaur"], img: "./sprites/002MSPE.png"},
@@ -83,4 +84,18 @@ export const pokemon = [
     ], locations: ["Gen1_Route_23"], evolutions: ["Mankey", "Annihilape"], img: "./sprites/057MSPE.png"},
     { no: 58, name: "Growlithe",  type: ["Fire"], abilities: ["Intimidate", "Flash_Fire", "Justified"
     ], locations: ["Gen1_Route_7", "Gen1_Route_8", "Gen1_Pokemon_Mansion"], evolutions: ["Arcanine"], img: "./sprites/058MSPE.png"},
+    { no: 59, name: "Arcanine",  type: ["Fire"], abilities: ["Intimidate", "Flash_Fire", "Justified"
+    ], locations: [], evolutions: ["Growlithe"], img: "./sprites/059MSPE.png"},
+    { no: 60, name: "Poliwag",  type: ["Water"], abilities: ["Water_Absorb", "Damp", "Swift_Swim"
+    ], locations: ["Gen1_Route_5", "Gen1_Route_6", "Gen1_Route_10", "Gen1_Route_11", "Gen1_Route_12", "Gen1_Route_13", "Gen1_Route_17", "Gen1_Route_18", "Gen1_Route_19", "Gen1_Route_20", "Gen1_Route_21", "Gen1_Route_22", "Gen1_Route_23", "Gen1_Route_24", "Gen1_Route_25", "Gen1_Pallet_Town", "Gen1_Viridian_City", "Gen1_Cerulean_City", "Gen1_Cerulean_Gym", "Gen1_Cerulean_Cave", "Gen1_Vermilion_City", "Gen1_Celadon_City", "Gen1_Fuchsia_City", "Gen1_Safari_Zone", "Gen1_Seafoam_Islands", "Gen1_Cinnabar_Island", "Gen1_Indigo_Plateau", ], evolutions: ["Poliwhirl", "Poliwrath", "Politoed"], img: "./sprites/060MSPE.png"},
+    { no: 61, name: "Poliwhirl",  type: ["Water"], abilities: ["Water_Absorb", "Damp", "Swift_Swim"
+    ], locations: ["Gen1_Route_10", "Gen1_Route_22", "Gen1_Route_23", "Gen1_Celadon_City"], evolutions: ["Poliwag", "Poliwrath", "Politoed"], img: "./sprites/061MSPE.png"},
+    { no: 62, name: "Poliwrath",  type: ["Water", "Fighting"], abilities: ["Water_Absorb", "Damp", "Swift_Swim"
+    ], locations: [], evolutions: ["Poliwag", "Poliwhirl", "Politoed"], img: "./sprites/062MSPE.png"},
+    { no: 63, name: "Abra",  type: ["Psychic"], abilities: [], locations: ["Gen1_Route_5", "Gen1_Route_6", "Gen1_Route_7", "Gen1_Route_8", "Gen1_Route_24", "Gen1_Route_25", "Gen1_Celadon_City"], evolutions: ["Kadabra", "Alakazam"], img: "./sprites/063MSPE.png"},
+    { no: 64, name: "Kadabra",  type: ["Psychic"], abilities: [], locations: ["Gen1_Route_8", "Gen1_Cerulean_Cave"], evolutions: ["Abra", "Alakazam"], img: "./sprites/064MSPE.png"},
+    { no: 65, name: "Alakazam",  type: ["Psychic"], abilities: [], locations: [], evolutions: ["Abra", "Kadabra"], img: "./sprites/065MSPE.png"},
+    { no: 66, name: "Machop",  type: ["Fighting"], abilities: [], locations: ["Gen1_Route_10", "Gen1_Rock_Tunnel", "Gen1_Victory_Road"], evolutions: ["Machoke", "Machamp"], img: "./sprites/066MSPE.png"},
+    { no: 67, name: "Machoke",  type: ["Fighting"], abilities: [], locations: ["Gen1_Underground_Path", "Gen1_Victory_Road"], evolutions: ["Machop", "Machamp"], img: "./sprites/067MSPE.png"},
+    { no: 68, name: "Machamp",  type: ["Fighting"], abilities: [], locations: [], evolutions: ["Machop", "Machoke"], img: "./sprites/068MSPE.png"},
 ]; 
