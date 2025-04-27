@@ -8,7 +8,6 @@ const routes = ["Gen1_Starter", "Gen1_Route_1", "Gen1_Viridian_City", "Gen1_Rout
 
 const box = [];
 const team = [];
-const fainted = [];
 
 
 const encounter = document.getElementById("encounter_details");
@@ -68,12 +67,12 @@ routes.forEach((el) => {
 
     let evolve = document.createElement("div");
     evolve.id = `${el}_evolve`;
-    evolve.classList = "reset";
+    evolve.classList = "evolve";
     let evolveImg = document.createElement("img");
     evolveImg.src = "./sprites/evolve.png";
     evolveImg.id = `${el}_evolve_img`;
     evolve.appendChild(evolveImg);
-    evolve.addEventListener("click", () => evolve(`${el}_input`));
+    evolve.addEventListener("click", () => evolutionList(`${el}_input`, `${el}_evolve`));
     div1.appendChild(evolve);
 
     let reset = document.createElement("div");
@@ -99,8 +98,8 @@ routes.forEach((el) => {
             li.appendChild(img);
             let span = document.createElement("span");
             span.id = `${pel.name}_span`;
-            span.innerText = `${pel.name}`
-            li.appendChild(span)
+            span.innerText = `${pel.name}`;
+            li.appendChild(span);
             li.addEventListener("click", () => addToTeam(el, pel, `${el}_options`, `${el}_input`));
             document.getElementById(`${el}_options`).appendChild(li);
     
@@ -110,14 +109,15 @@ routes.forEach((el) => {
 
 
 function addStatus(id, text, hide, poke) {
-    document.getElementById(text).innerText = `${id}`
+    let statText = document.getElementById(text)
+    statText.innerText = `${id}`
     let temp =  document.getElementById(poke).textContent; 
+    let find = box.findIndex((el) => el.pokemon.name === temp);
+
     if (temp !== "Select Pokémon...") {
-        let find = box.findIndex((el) => el.pokemon.name === temp);
-        box[find].status = id;
-    }
+            box[find].status = id;
+    } 
     search(hide);
-    console.log(box)
 }
 
 
@@ -136,7 +136,8 @@ function addToTeam(r, p, id, selectid){
 
     let pid = document.getElementById(selectid)
     let span = document.createElement("span");
-    span.id = `${p.name}_span`;
+    span.id = `${r}_${p.name}_span`;
+    span.classList = "route_encounter_value";
     span.innerText = `${p.name}`
     let image = document.createElement("img");
     image.src = `${p.img}`;
@@ -148,23 +149,80 @@ function addToTeam(r, p, id, selectid){
 }
 
 
-function evolve(input) {
+function evolutionList(input, clicked) {
+    if (document.querySelector(`#${input} span`)) {
+        const en = document.querySelector(`#${input} span`)
+
+    if (!document.getElementById(`${clicked}_ul`) && en.textContent !== "Select Pokémon...") {
+        let temp = pokemon.findIndex((el) => el.name === en.textContent)
+        let evo = document.getElementById(clicked);
+
+        const ul = document.createElement("ul");
+        ul.id = `${clicked}_ul`;
+        pokemon[temp].evolutions.forEach((el) => {
+            let temp2 = pokemon.findIndex((e) => e.name == el)
+            if (temp2 !== -1) {
+                const li = document.createElement("li");
+                li.id = `${el}_li`;
+                let img = document.createElement(`img`);
+                img.src = `${pokemon[temp2].img}`;
+                li.appendChild(img);
+                li.addEventListener("click", () => evolvePokemon(el, input))
+                ul.appendChild(li);
+            }
+        })
+        evo.appendChild(ul);
+        search(`${clicked}_ul`);
+
+    } else if (en.textContent !== "Select Pokémon...") {
+        const en = document.querySelector(`#${input} span`)
+        let temp = pokemon.findIndex((el) => el.name === en.textContent)
+        let evo = document.getElementById(clicked);
+
+        const ul = document.getElementById(`${clicked}_ul`)
+        ul.innerHTML = "";
+        pokemon[temp].evolutions.forEach((el) => {
+
+            let temp2 = pokemon.findIndex((e) => e.name == el)
+            
+            if (temp2 !== -1) {
+                const li = document.createElement("li");
+                li.id = `${el}_li`;
+                let img = document.createElement(`img`);
+                img.src = `${pokemon[temp2].img}`;
+                li.appendChild(img);
+                li.addEventListener("click", () => evolvePokemon(el, input))
+                ul.appendChild(li);
+            }
+        })
+        
+        evo.appendChild(ul);
+        search(`${clicked}_ul`);
+    }
+    }
+}
+
+function evolvePokemon (p,  input) {
+    let el = document.querySelector(`#${input} span`);
+    let temp = el.innerText;
+    let temp2 = pokemon.findIndex((e) => e.name == p)
+    let temp3 = box.findIndex((i) => i.pokemon.name == temp)
+    box[temp3].pokemon =  pokemon[temp2];
+    el.textContent = p;
+    document.querySelector(`#${input} img`).src = box[temp3].pokemon.img;
+    console.log(box);
+
 
 }
 
 function pokemonReset(r, input1, input2) {
     let status = document.getElementById(input2)
     const p = document.getElementById(input1);
-    console.log(status, p)
 
 
     if (box.some(el => el.route === r)) {
         let temp = box.findIndex((el) => el.route === r)
-        box[temp].status = "Fainted";
-        fainted.push(box[temp]);
-        console.log("Fainted: ", fainted);
         box.splice(temp, 1);
-        console.log("Box: ", box);
         status.innerText = "Status..."
         p.innerHTML = "";
         let span = document.createElement("span");

@@ -2,6 +2,18 @@ body {
   margin: 0;
   background-color: rgb(30,30,30);
 }
+
+.show {
+  display: block;
+  color: white;
+}
+
+.evolve ul.show {
+  display: block;
+  color: white;
+}
+
+
 ul {
     display: none;
     position: absolute;
@@ -17,7 +29,17 @@ ul {
     width:260px;
     overflow-x: hidden;
   }
+  
+  div.evolve ul {
+    display: none;
+    position: absolute;
+    width:43px;
+    margin-top: 300px;
+    left: -4px;
+    
+  }
 
+  
 
   .party {
     height: 80px;
@@ -70,40 +92,36 @@ ul {
     width: 10%;
     color:white;
     font-size:25px;
-    margin-right: 10px;
+    margin-right: 50px;
+    display: flex;
+    position: relative;
+    align-items: left;
   }
   li:hover {
     background-color: rgb(8, 136, 255);
 
   }
 
-  .show {display: block;
-        color: white;}
+  ul:hover {
+    border-color: rgb(200,0,0);
+    border-style: solid;
+  }
 
    [contenteditable] {
     height: 60px;
     width: 290px;
     padding-left:10px;
-    font-size: 20px;
-    position: relative;
+    font-size: 30px;
     border-radius: 20px;
     background-color: white;
     color: black;
     position: relative;
     border-style: solid;
-    border-color:rgb(100,100,100);
-   }
-  [contenteditable] {
-    height: 50px;
-    font-size: 30px;
-    position: relative;
-    border-radius: 20px;
-    background-color: white;
-    color: black;
-    position: relative;
     display: flex;
     align-items:center;
-  }
+    border-color:rgb(100,100,100);
+   }
+ 
 
 
   li {
@@ -129,14 +147,21 @@ ul {
     padding-right: 5px;
   }  
 
-.reset, .evolve {
-  background-color: white;
-  width: 60px;
-  height: 50px;
-  margin-right: 10px;
+.evolve, .reset {
+  height: 60px;
+  width: 70px;
+  padding-left:10px;
+  font-size: 30px;
+  position: fixed;
   border-radius: 20px;
-  border-color:rgb(100,100,100);
+  background-color: white;
+  color: black;
+  position: relative;
   border-style: solid;
+  display: flex;
+  align-items:center;
+  border-color:rgb(100,100,100);
+  margin-right: 5px;
 }
 
 [contenteditable]:hover, .reset:hover, .evolve:hover {
