@@ -31,3 +31,4 @@ The tools and languages that I am currently using for developing this are.
 - Vue.Js
 - [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Main_Page) for the Pokemon details and Sprites.
 - Nintendo and the Pokemon Company own the actual Pokemon and art for them.
+- [svgrepo](https://www.svgrepo.com/) for menu images.
