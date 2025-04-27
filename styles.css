@@ -29,17 +29,32 @@ ul {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    
     margin-bottom: 10px;
+  }
+
+  .topnavContent {
+    background-color: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-bottom: 20px;
+    padding: 0 30px;
+
   }
 
   .topnavbar a, .topnavbar img {
     float: center;
     text-align:center;
-
+    padding: 5px;
   }
 
-  .topnavbar a:hover, .topnavbar img:hover {
-    background-color: white;
+.topnavbar img:hover {
+    background-color: rgb(200,0,0);
+    border-radius: 20px;
+  }
+  .topnavbar a img {
+    height: 80px;
+    width:80px;
   }
 
 
