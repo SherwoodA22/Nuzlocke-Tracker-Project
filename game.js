@@ -1,16 +1,21 @@
-import { pokemon } from "./pokemon.js";
-
-const routes = ["Gen1_Starter", "Gen1_Route_1", "Gen1_Viridian_City", "Gen1_Route_22", "Gen1_Route_2", "Gen1_Viridian_Forest", "Gen1_Route_3", "Gen1_Route_4", "Gen1_Mt_Moon", "Gen1_Cerulean_City", "Gen1_Route_24", "Gen1_Route_25", "Gen1_Route_5", "Gen1_Underground_Path", "Gen1_Route_6", "Gen1_Vermilion_City", "Gen1_Route_11", "Gen1_Digletts_Cave", "Gen1_Route_9",
-    "Gen1_Route_10", "Gen1_Rock_Tunnel", "Gen1_Pokémon_Tower", "Gen1_Route_12", "Gen1_Route_8", "Gen1_Route_7", "Gen1_Celadon_City", "Gen1_Saffron_City", "Gen1_Route_16", "Gen1_Route_17", "Gen1_Route_18", "Gen1_Fuchsia_City", "Gen1_Safari_Zone", "Gen1_Route_15", "Gen1_Route_14", "Gen1_Route_13", "Gen1_Power_Plant", "Gen1_Route_19", "Gen1_Route_20", 
-    "Gen1_Seafoam_Islands", "Gen1_Cinnabar_Island", "Gen1_Pokémon_Mansion", "Gen1_Route_21", "Gen1_Route_23", "Gen1_Victory_Road", "Gen1_Cerulean_Cave"
-];
+import { pokemon, gameRoutes } from "./pokemon.js";
 
 
 const box = [];
 const team = [];
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("name");
+
+const routes = gameRoutes[gameRoutes.findIndex((el) => el.game === id)].route;
 
 
+
+function displayRoutes() {
 const encounter = document.getElementById("encounter_details");
+const gameName = document.createElement("p");
+gameName.innerText = `Current Game: Pokémon ${id}`;
+gameName.id = "gameTitle"
+encounter.appendChild(gameName);
 routes.forEach((el) => {
     let div1 = document.createElement("div");
     div1.id = `${el}_div`;
@@ -18,7 +23,7 @@ routes.forEach((el) => {
     encounter.appendChild(div1);
     let p = document.createElement("p");
     p.innerText = `${el.replace('_', " ")}`
-    p.innerText = p.innerText.replace("Gen1", "");
+    p.innerText = p.innerText.replace( `${id}`, "");
     p.innerText = p.innerText.replace("_", " ");
     div1.appendChild(p);
     let div = document.createElement("div");
@@ -106,6 +111,7 @@ routes.forEach((el) => {
     }
 })
 })
+}
 
 
 function addStatus(id, text, hide, poke) {
@@ -231,3 +237,5 @@ function pokemonReset(r, input1, input2) {
     }
     
 }
+
+displayRoutes();

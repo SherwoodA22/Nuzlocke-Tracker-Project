@@ -51,18 +51,17 @@ ul {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    
     margin-bottom: 10px;
   }
 
   .topnavContent {
-    border-color: gray;
-    border-style: solid;
-    border-width: 5px;
-    border-top-width: 0px; 
     background-color: white;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    border-color: gray;
+    border-style: solid;
+    border-width: 5px;
+    border-top-width: 0px;
     margin-bottom: 20px;
     padding: 0 30px;
 
@@ -187,9 +186,41 @@ div > img {
    margin-top: 10px;
 }
 
-#gameTitle {
-  font-size: 60px;
-  width: 100%;
-  display:flex;
-  justify-content: center;
-}
+  input[type=image] {
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    border-width: 5px;
+    border-color: rgb(100,100,100);
+    border-style: solid;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+   input[type=image]:hover {
+    border-color: rgb(200,0,0);
+  }
+
+#title {
+    font-size: 50px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #game_table {
+    background-color: white;
+    padding: 10px;
+    border-color: rgb(100,100,100);
+    border-style: solirgb(27, 26, 26);
+    border-width: 25px;
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 5px;
+    width: 56vw;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    left: 25px;
+    margin: auto;
+  }
+
