@@ -35,7 +35,8 @@ routes.forEach((el) => {
     input.innerText = "Select Pokémon...";
     input.id = `${el}_input`;
     input.addEventListener("click", (event) => search(`${el}_options`));
-    input.addEventListener("focusout", () => search(`${el}_options`));
+
+
     div.appendChild(input);
     let div2 = document.createElement("div");
     div2.id = `${el}_status_div`
@@ -67,6 +68,7 @@ routes.forEach((el) => {
     status.appendChild(o3);
     status.appendChild(o4);
     faint.addEventListener("click", () => search(`${el}_status`))
+
     div2.appendChild(faint);
     div2.appendChild(status);
 
@@ -111,6 +113,42 @@ routes.forEach((el) => {
     }
 })
 })
+
+document.addEventListener("click", (e) => {
+  routes.forEach((route) => {
+    const input = document.getElementById(`${route}_input`);
+    const options = document.getElementById(`${route}_options`);
+    const select = document.getElementById(`${route}_select`);
+    const status = document.getElementById(`${route}_status`);
+     const evolve = document.getElementById(`${route}_evolve`);
+     const evolveList = document.getElementById(`${route}_evolve_ul`);
+
+    if (
+      input && options &&
+      !e.target.closest(`#${route}_input`) &&
+      !e.target.closest(`#${route}_options`)
+    ) {
+      options.classList.remove("show");
+    }
+
+    if (
+      select && status &&
+      !e.target.closest(`#${route}_select`) &&
+      !e.target.closest(`#${route}_status`)
+    ) {
+      status.classList.remove("show");
+    }
+
+    if (
+      evolve && evolveList &&
+      !e.target.closest(`#${route}_evolve`) &&
+      !e.target.closest(`#${route}_evolve_ul`)
+    ) {
+      evolveList.classList.remove("show");
+    }
+  });
+});
+
 }
 
 
