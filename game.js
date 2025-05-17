@@ -13,7 +13,7 @@ const routes = gameRoutes[gameRoutes.findIndex((el) => el.game === id)].route;
 function displayRoutes() {
 const encounter = document.getElementById("encounter_details");
 const gameName = document.createElement("p");
-gameName.innerText = `Current Game: Pokémon ${id}`;
+gameName.innerText = `Current Game: Pokémon ${id.replace(/_/g, " ")}`;
 gameName.id = "gameTitle"
 encounter.appendChild(gameName);
 routes.forEach((el) => {
