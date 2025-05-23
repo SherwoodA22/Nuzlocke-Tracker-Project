@@ -22,8 +22,7 @@ routes.forEach((el) => {
     div1.classList = "wrapper";
     encounter.appendChild(div1);
     let p = document.createElement("p");
-    p.innerText = `${el.replace(/_/g, " ")}`
-    p.innerText = p.innerText.replace( `${id}`, "");
+    p.innerText = el.replace(id, "").replace(/_/g, " ")
     p.innerText = p.innerText.replace(/_/g, " ");
     div1.appendChild(p);
     let div = document.createElement("div");
