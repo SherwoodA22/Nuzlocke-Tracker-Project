@@ -250,7 +250,7 @@ function evolutionList(input, clicked) {
 
 function evolvePokemon (p,  input) {
     let el = document.querySelector(`#${input} span`);
-    let temp = el.innerText;
+    let temp = el.innerText.replace(" ", "_");
     let temp2 = pokemon.findIndex((e) => e.name == p)
     let temp3 = box.findIndex((i) => i.pokemon.name == temp)
     box[temp3].pokemon =  pokemon[temp2];
